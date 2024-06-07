@@ -1,6 +1,6 @@
 ﻿namespace MultiShop.Discount.Dtos
 {
-    public class ResultCouponDto
+    public class GetByIDDiscountCouponDto
     {
         public int CouponID { get; set; }
         public string Code { get; set; }
