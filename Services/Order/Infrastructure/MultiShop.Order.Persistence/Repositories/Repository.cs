@@ -43,12 +43,15 @@ namespace MultiShop.Order.Persistence.Repositories
 
         public async Task<T> GetByIdAsync(int id)
         {
+            //id'ye göre null gelme ihtimali olduğu için altını çizmiştir.
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }
+
