@@ -54,7 +54,7 @@ namespace MultiShop.Order.WebApi.Controllers
         public async Task<IActionResult> RemoveOrderDetail(int id)
         {
             await _removeOrderDetailCommandHandler.Handle(new RemoveOrderDetailCommand(id));
-            return Ok("Sipariş başarıyla silindi");
+            return Ok("Sipariş detayı başarıyla silindi");
         }
     }
 }
